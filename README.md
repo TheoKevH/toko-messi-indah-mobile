@@ -22,5 +22,24 @@ NPM: <b>2306210973</b>
 <p align="justify">setState() adalah fungsi yang digunakan dalam stateful widget di Flutter untuk memberi tahu framework bahwa ada perubahan pada data atau kondisi dalam widget yang memerlukan pembaruan tampilan. Ketika setState() dipanggil, Flutter akan merender ulang bagian UI yang telah diklik oleh user. </p>
 
 <h2 align="left"> 4. Jelaskan perbedaan antara const dengan final.</h2>
-<p align="justify">
+<p align="justify">Dari pemahaman saya, const menjadikan nilai benar-benar konstan dan immutable, bahkan dalam konteks objek atau daftar, sementara final hanya memastikan nilai tidak dapat diubah setelah inisialisasi pertama.
 <h2 align="left"> 5. Jelaskan bagaimana cara kamu mengimplementasikan <i>checklist-checklist</i> di atas</h2>
+<p>
+    <ul>
+        <li>Membuat repositori baru di github untuk proyek ini.</li>
+        <li>Membuat proyek baru dengan menjalankan flutter create toko_messi_indah</li>
+        <li>Dalam folder lib, membuat file baru bernama menu.dart</li>
+        <li>Dalam main.dart, mengubah warna aplikasi menjadi biru dengan mengganti colorScheme</li>
+        <li>Mengubah class MyHomePage menjadi stateless widget</li>
+        <li>Membuat card yang berisi data nama, npm, dan kelas saya</li>
+        <li>Membuat class baru bernama InfoCard di file menu.dart</li>
+        <li>Membuat button yang bisa diklik oleh user dengan Icon</li>
+        <li>Mengganti warna button supaya memiliki warna yang berbeda</li>
+        <li>Mengisi list ItemHomePage dengan buttons sesuai dengan ketentuan tugas</li>
+        <li align="justify">Membuat class baru bernama ItemCard untuk menampilkan buttons yang sudah dibuat. Terdapat juga SnackBar yang menunjukkan message di bagian bawah page setelah button diklik</li>
+        <li>Mengintegrasikan InfoCard dan ItemCard untuk ditampilkan di MyHomePage</li>
+        <li>Mengecek program dengan menjalankan flutter analyze</li>
+        <li>Melihat bentuk program dengan menjalankan flutter run</li>
+        <li>Melakukan git add, commit, dan push</li>
+    </ul>
+</p>
