@@ -1,7 +1,10 @@
-<h1>Tugas 7: Elemen Dasar Flutter</h1>
+<h1>Tugas 8: Navigation, Layout, Forms, & Input Elements</h1>
 Nama: <b>Theodore Kevin Himawan</b><br>
 NPM: <b>2306210973</b>
 
+<h2>Tugas Sebelumnya😎👨‍💻</h2>
+<details>
+<summary>Tugas 7: Elemen Dasar Flutter</summary>
 <h2 align="left"> 1. Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.</h2>
 <p align="justify">Stateless widget dan stateful widget adalah dua jenis widget utama dalam Flutter. Stateless widget adalah widget yang tidak memiliki "state" atau kondisi yang berubah-ubah. Sementara itu, stateful widget adalah widget yang memiliki "state" atau kondisi yang bisa saja berubah. Stateless widget sedikit lebih cepat dan digunakan untuk button static. Stateful widget digunakan dalam kondisi dynamic, seperti tombol yang bisa berubah warna bila diklik.
 </p>
@@ -43,3 +46,10 @@ NPM: <b>2306210973</b>
         <li>Melakukan git add, commit, dan push</li>
     </ul>
 </p>
+</details>
+
+<h2>1. Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?</h2>
+<h2>2. Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!</h2>
+<h2>3. Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!</h2>
+<h2>4. Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?</h2>
+<h2>5. Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?</h2>

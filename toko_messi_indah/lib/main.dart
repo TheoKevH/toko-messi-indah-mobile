@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toko_messi_indah/menu.dart';
+import 'package:toko_messi_indah/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
