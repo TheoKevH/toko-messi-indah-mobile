@@ -14,6 +14,7 @@ class _ProductEntryFormPageState extends State<ProductEntryFormPage> {
   String _category = "";
   String _description = "";
   int _price = 0;
+  int _amount = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -129,6 +130,32 @@ class _ProductEntryFormPageState extends State<ProductEntryFormPage> {
                     return null;
                   },
                 )),
+            Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    hintText: "Amount",
+                    labelText: "Amount",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                  ),
+                  onChanged: (String? value) {
+                    setState(() {
+                      _amount = int.tryParse(value!) ?? 0;
+                    });
+                  },
+                  validator: (String? value) {
+                    if (value == null || value.isEmpty) {
+                      return "Amount cannot be empty!";
+                    }
+                    int? parsedValue = int.tryParse(value);
+                    if (parsedValue == null || parsedValue <= 0) {
+                      return "Price must be greater than 0!";
+                    }
+                    return null;
+                  },
+                )),
             Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
@@ -149,10 +176,11 @@ class _ProductEntryFormPageState extends State<ProductEntryFormPage> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('Mood: $_productName'),
-                                  Text('Feelinds: $_category'),
-                                  Text('Mood intensity: $_description'),
-                                  Text('Mood intensity: $_price'),
+                                  Text('Product: $_productName'),
+                                  Text('Category: $_category'),
+                                  Text('Description: $_description'),
+                                  Text('Price: $_price'),
+                                  Text('Amount: $_amount'),
                                 ],
                               ),
                             ),

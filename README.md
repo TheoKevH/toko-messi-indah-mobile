@@ -48,8 +48,34 @@ NPM: <b>2306210973</b>
 </p>
 </details>
 
-<h2>1. Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?</h2>
-<h2>2. Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!</h2>
-<h2>3. Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!</h2>
-<h2>4. Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?</h2>
-<h2>5. Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?</h2>
+<h2>1️⃣ Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?</h2>
+
+<p align="justify">Kegunaan const di Flutter adalah untuk membuat objek yang bersifat tetap (immutable) dan hanya dihitung sekali saat kompilasi. Keuntungan menggunakan const di Flutter adalah membuat objek yang bersifat konstan sehingga tidak perlu dibuat ulang setiap kali widget di-rebuild. Karena itu, kode menjadi lebih efisien dan "ringan". Sebaiknya, const digunakan saat kita tahu tampilan akan tetap statis, dan sebaiknya tidak digunakan apabila terdapat objek yang dinamis dan tampilannya berubah-ubah terus.</p>
+
+<h2>2️⃣ Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!</h2>
+<p align="justify">
+Column dan Row di Flutter digunakan untuk menyusun widget secara vertikal dan horizontal. Column menempatkan widget dalam urutan dari atas ke bawah, sedangkan Row dari kiri ke kanan.
+
+<b>Contoh implementasi Row:</b></p>
+```dart
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceAround,
+  children: [Icon(Icons.star), Icon(Icons.star_border)],
+)
+```
+<b>Contoh implementasi Column:</b>
+```dart
+Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [Text("Item 1"), Text("Item 2")],
+)
+```
+
+<h2>3️⃣ Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!</h2>
+<p align="justify">Pada halaman form tugas kali ini, saya menggunakan beberapa elemen input Flutter, seperti TextFormField untuk menerima teks (misalnya nama produk, kategori, deskripsi, dan harga), dan ElevatedButton sebagai tombol untuk submit data. Elemen input lain di Flutter yang tidak saya gunakan adalah DropdownButton, yang berguna untuk memilih opsi dari daftar, Checkbox untuk pilihan (ya/tidak), dan Slider untuk memilih nilai dalam rentang tertentu.</p>
+
+<h2>4️⃣ Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?</h2>
+<p align="justify">Iya, saya mengimplementasikan tema pada aplikasi ini. Untuk mengatur tema dalam aplikasi Flutter agar konsisten, saya menggunakan ThemeData di bagian MaterialApp. Dengan ThemeData, kita bisa mengatur warna utama (primaryColor), warna teks, gaya teks (textTheme), serta gaya elemen seperti AppBar, tombol, dan icons.</p>
+
+<h2>5️⃣ Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?</h2>
+<p align="justify">Saya menangani navigasi menggunakan Navigator untuk berpindah antara halaman menggunakan metode push dan pop. Metode push digunakan untuk menambah halaman ke tumpukan (stack), sementara pop menghapus halaman dari tumpukan dan kembali ke halaman sebelumnya.</p>

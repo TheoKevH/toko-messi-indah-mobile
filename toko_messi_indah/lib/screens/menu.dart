@@ -31,6 +31,7 @@ class MyHomePage extends StatelessWidget {
         ),
         // Warna latar belakang AppBar diambil dari skema warna tema aplikasi.
         backgroundColor: Theme.of(context).colorScheme.primary,
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       drawer: const LeftDrawer(),
       // Body halaman dengan padding di sekelilingnya.
@@ -63,7 +64,7 @@ class MyHomePage extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.only(top: 16.0),
                     child: Text(
-                      'Welcome to Mental Health Tracker',
+                      'Welcome to Toko Messi Indah',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18.0,
