@@ -46,7 +46,7 @@ class _ProductEntryPageState extends State<ProductEntryPage> {
               return const Column(
                 children: [
                   Text(
-                    'Belum ada data item pada JOSH app.',
+                    'Belum ada data item pada Toko Messi Indah.',
                     style: TextStyle(fontSize: 20, color: Color(0xff59A5D8)),
                   ),
                   SizedBox(height: 8),
