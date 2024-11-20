@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pbp_django_auth/pbp_django_auth.dart';
-import 'package:provider/provider.dart';
 import 'package:toko_messi_indah/models/product_entry.dart';
 import 'package:toko_messi_indah/widgets/left_drawer.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
 
 class ProductEntryPage extends StatefulWidget {
   const ProductEntryPage({super.key});
@@ -19,13 +19,13 @@ class _ProductEntryPageState extends State<ProductEntryPage> {
     var data = response;
 
     // Melakukan konversi data json menjadi object MoodEntry
-    List<ProductEntry> listMood = [];
+    List<ProductEntry> listItem = [];
     for (var d in data) {
       if (d != null) {
-        listMood.add(ProductEntry.fromJson(d));
+        listItem.add(ProductEntry.fromJson(d));
       }
     }
-    return listMood;
+    return listItem;
   }
 
   @override
@@ -33,7 +33,7 @@ class _ProductEntryPageState extends State<ProductEntryPage> {
     final request = context.watch<CookieRequest>();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Product List'),
+        title: const Text('Product Entry List'),
       ),
       drawer: const LeftDrawer(),
       body: FutureBuilder(
@@ -46,7 +46,7 @@ class _ProductEntryPageState extends State<ProductEntryPage> {
               return const Column(
                 children: [
                   Text(
-                    'Belum ada data product pada Toko Messi Indah.',
+                    'Belum ada data item pada JOSH app.',
                     style: TextStyle(fontSize: 20, color: Color(0xff59A5D8)),
                   ),
                   SizedBox(height: 8),
@@ -55,28 +55,76 @@ class _ProductEntryPageState extends State<ProductEntryPage> {
             } else {
               return ListView.builder(
                 itemCount: snapshot.data!.length,
-                itemBuilder: (_, index) => Container(
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "${snapshot.data![index].fields.name}",
-                        style: const TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
+                itemBuilder: (_, index) => GestureDetector(
+                  onTap: () {
+                    // Show detailed information of the selected item in a dialog
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: Text(snapshot.data![index].fields.name),
+                          content: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                  "Category: ${snapshot.data![index].fields.category}"),
+                              const SizedBox(height: 10),
+                              Text(
+                                  "Description: ${snapshot.data![index].fields.description}"),
+                              const SizedBox(height: 10),
+                              Text(
+                                  "Price: ${snapshot.data![index].fields.price}"),
+                            ],
+                          ),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop(); // Close the dialog
+                              },
+                              child: const Text('Close'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 12),
+                    padding: const EdgeInsets.all(20.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 7,
+                          offset:
+                              const Offset(0, 3), // changes position of shadow
                         ),
-                      ),
-                      const SizedBox(height: 10),
-                      Text("${snapshot.data![index].fields.category}"),
-                      const SizedBox(height: 10),
-                      Text("${snapshot.data![index].fields.description}"),
-                      const SizedBox(height: 10),
-                      Text("${snapshot.data![index].fields.price}")
-                    ],
+                      ],
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "${snapshot.data![index].fields.name}",
+                          style: const TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Text("${snapshot.data![index].fields.category}"),
+                        const SizedBox(height: 10),
+                        Text("${snapshot.data![index].fields.description}"),
+                        const SizedBox(height: 10),
+                        Text("${snapshot.data![index].fields.price}")
+                      ],
+                    ),
                   ),
                 ),
               );
